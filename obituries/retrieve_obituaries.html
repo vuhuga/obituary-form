@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obituaries</title>
+</head>
+<body>
+    <h1>Obituaries</h1>
+    <div id="obituaryList"></div>
+
+    <script>
+        
+        const obituaries = JSON.parse(localStorage.getItem("items"));
+
+        const obituaryList = document.getElementById("obituaryList");
+        obituaries.forEach((obituary) => {
+            const obituaryItem = document.createElement("p");
+            obituaryItem.textContent = obituary;
+            obituaryList.appendChild(obituaryItem);
+        });
+    </script>
+</body>
+</html>
